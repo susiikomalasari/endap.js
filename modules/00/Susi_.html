@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang=en-us dir=ltr>
+<head>
+  <link rel='stylesheet' href="/assets/css/style.css">
+</head>
+<body>
+<!-- code begins -->
+
+
+<script src="/libs/chartjs/4.5.1/chart.umd.min.js" defer></script>
+<script type="importmap">
+{
+  "imports": {
+    "endap": "/libs/endap/0.0.3/endap.min.js"
+  }
+}
+</script>
+
+
+<div id="cnt1">
+</div>
+
+
+<script type=module>
+import { Console as CLI } from "endap"
+const consoles = CLI.create("40px");
+
+const cnt = document.getElementById("cnt1");
+cnt.append(consoles.el);
+
+consoles.ver();
+
+// TULIS TUGAS DISINI:
+consoles.log("Hallo ini unggahan pertama Susi Komalasari 20925009");
+</script>
+
+
+<!-- code ends -->
+</body>
+</html>
