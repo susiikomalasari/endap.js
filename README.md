@@ -82,3 +82,7 @@ $ python3 -m http.server 8000
 + Install a plain text editor, e.g. Notepad++ from https://notepad-plus-plus.org/downloads/ or other one of your choice.
 + Open it and create files or folder in `endap.js/module/xx`.
 + Remember to add, commit, and push using Git for any changes.
+
+
+## misc
++ You can talk via issues. 
