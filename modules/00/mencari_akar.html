@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang=en-us dir=ltr>
+<head>
+  <link rel='stylesheet' href="/assets/css/style.css">
+</head>
+<body>
+<!-- code begins -->
+
+
+<script src="/libs/chartjs/4.5.1/chart.umd.min.js" defer></script>
+<script type="importmap">
+{
+  "imports": {
+    "endap": "/libs/endap/0.0.3/endap.min.js"
+  }
+}
+</script>
+
+
+<div id="cnt1">
+</div>
+
+
+<script type=module>
+import { Console as CLI } from "endap"
+const consoles = CLI.create("300px");
+
+const cnt = document.getElementById("cnt1");
+cnt.append(consoles.el);
+
+consoles.ver();
+
+// TULIS TUGAS DISINI:
+
+function f(x) {
+  let c0 = 21.3;
+  let c1 = -10.3;
+  let c2 = 1;
+  let y = c0 + c1 * x + c2 * x * x;
+  return y;
+}
+
+let xmin = 0;
+let xmax = 10;
+let dx = 1;
+let n = (xmax - xmin) / dx;
+
+let x1 = xmin;
+let s1 = Math.sign(f(x1));
+
+consoles.log("Proses pencarian perubahan tanda");
+consoles.log("------------------------------");
+
+for(let i = 1; i <= n; i++) {
+
+  let x2 = xmin + i * dx;
+  let y = f(x2);
+  let s2 = Math.sign(y);
+
+  consoles.log("i = " + i);
+  consoles.log("x1 = " + x1.toFixed(2));
+  consoles.log("x2 = " + x2.toFixed(2));
+  consoles.log("f(x1) = " + f(x1).toFixed(2));
+  consoles.log("f(x2) = " + y.toFixed(2));
+  consoles.log("s1 = " + s1);
+  consoles.log("s2 = " + s2);
+  consoles.log("s1 * s2 = " + (s1 * s2));
+  consoles.log("------------------------------");
+
+  if(s1 * s2 < 0) {
+
+    consoles.log("Perubahan tanda ditemukan");
+    consoles.log("Akar berada antara:");
+    consoles.log(x1.toFixed(2) + " < x < " + x2.toFixed(2));
+
+    break;
+
+  } else {
+
+    s1 = s2;
+    x1 = x2;
+
+  }
+}
+
+</script>
+
+
+<!-- code ends -->
+</body>
+</html>
